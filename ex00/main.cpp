@@ -1,7 +1,13 @@
 #include "ClapTrap.hpp"
 
-int main(void)
+int	main(void)
 {
-	ClapTrap ayumi("ayumi");
-	ClapTrap kimura("kimura");
+	ClapTrap henk("Henk");
+	ClapTrap peter("Peter");
+	henk.takeDamage(5);
+	peter.takeDamage(5);
+	peter.attack("Piet");
+	peter.beRepaired(3);
+	henk = peter;
+	henk.beRepaired(1);
 }
