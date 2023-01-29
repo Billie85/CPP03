@@ -18,9 +18,11 @@ public:
 	void beRepaired(unsigned int amount);
 
 	//------operator--------
-	ClapTrap operator=(const ClapTrap &other);
+	ClapTrap &operator=(const ClapTrap &other);
 
 	//-------constructor----
+	ClapTrap(const ClapTrap &c);
+	ClapTrap(ClapTrap &c);
 	ClapTrap(std::string);
 	~ ClapTrap();
 };

@@ -1,12 +1,18 @@
 #include "ClapTrap.hpp"
 
-ClapTrap ClapTrap::operator=(const ClapTrap &other)
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
 	this->_name = other._name;
 	this->_Attack_damage = other._Attack_damage;
 	this->_Energy = other._Energy;
 	this->_HP = other._HP;
 	return (*this);
+}
+
+ClapTrap::ClapTrap(const ClapTrap &c)
+{
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+	*this = c;
 }
 
 ClapTrap::ClapTrap(std::string Name) :_name(Name)
