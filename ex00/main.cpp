@@ -2,12 +2,12 @@
 
 int	main(void)
 {
-	ClapTrap henk("Henk");
-	ClapTrap peter("Peter");
-	henk.takeDamage(5);
-	peter.takeDamage(5);
-	peter.attack("Piet");
-	peter.beRepaired(3);
-	henk = peter;
-	henk.beRepaired(1);
+	ClapTrap user1("user1");
+	ClapTrap user2("user2");
+	user1.takeDamage(5);
+	user2.takeDamage(5);
+	user2.attack("Piet");
+	user2.beRepaired(3);
+	user1 = user2;
+	user1.beRepaired(1);
 }
