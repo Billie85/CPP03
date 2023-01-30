@@ -20,10 +20,11 @@ public:
 	//------operator--------
 	ClapTrap &operator=(const ClapTrap &other);
 
-	//-------constructor----
+	//Default constructor
+	ClapTrap();
+	//Copy constructor implementation
 	ClapTrap(const ClapTrap &c);
-	ClapTrap(ClapTrap &c);
-	ClapTrap(std::string);
+	ClapTrap(std::string); 
 	~ ClapTrap();
 };
 

@@ -9,9 +9,16 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
+//Default constructor
+ClapTrap::ClapTrap()
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+
+//Copy constructor
 ClapTrap::ClapTrap(const ClapTrap &c)
 {
-	std::cout << "ClapTrap copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = c;
 }
 
