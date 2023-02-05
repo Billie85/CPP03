@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	//Scav Trap nomore HP test;
+	//Scav Trap no more HP test;
 	ScavTrap user2("user2");
 	user2.beRepaired(2);
 	user2.takeDamage(102);

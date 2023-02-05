@@ -6,6 +6,8 @@
 
 class  ClapTrap
 {
+public:
+	ClapTrap();
 protected:
 //継承した先でも使える。
 	std::string 	_name;
@@ -20,10 +22,9 @@ public:
 
 	ClapTrap& operator=(const ClapTrap &other);
 
-	ClapTrap();
 	ClapTrap(const ClapTrap&);
 	ClapTrap(std::string);
-	~ ClapTrap();
+	virtual ~ClapTrap();
 };
 
 #endif
