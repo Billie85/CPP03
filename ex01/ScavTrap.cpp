@@ -1,10 +1,10 @@
 #include "ScavTrap.hpp"
 
-//------constructor----------
+/* //------constructor----------
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "Default constructor" << std::endl;
-}
+} */
 
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
-	std::cout << "ScavTra" << Name << "created" << std::endl;
+	std::cout << "ScavTrap " << Name << " created " << std::endl;
 	this->_HP = 100;
 	this->_Energy = 50;
 	this->_Attack_damage = 20;
@@ -40,8 +40,12 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (this->_HP <= 0 && this->_Energy <= 0)
-		return ;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
 	else
 	{
 		std::cout << "ScavTrap " << _name << " attacks " << target << " causing " << _Attack_damage << " points of damage! " << std::endl;
@@ -51,14 +55,27 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ScavTrap " << _name << " took " << amount << " damage " << std::endl;
-	this->_HP = this->_HP - amount;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
+	else
+	{
+		std::cout << "ScavTrap " << _name << " took " << amount << " damage " << std::endl;
+		this->_HP = this->_HP - amount;
+	}
 }
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
-	if (this->_HP <= 0 && this->_Energy <= 0)
-		return ;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
 	else
 	{
 		this->_Energy--;

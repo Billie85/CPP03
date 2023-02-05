@@ -6,6 +6,8 @@
 
 class  ClapTrap
 {
+private:
+	ClapTrap();
 protected:
 //継承した先でも使える。
 	std::string 	_name;
@@ -23,7 +25,6 @@ public:
 	ClapTrap& operator=(const ClapTrap &other);
 
 	//-------constructor----
-	ClapTrap();
 	ClapTrap(const ClapTrap&);
 	ClapTrap(std::string);
 	~ ClapTrap();

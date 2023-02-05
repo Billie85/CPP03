@@ -3,12 +3,10 @@
 
 int	main(void)
 {
-	ScavTrap user1("user1");
-	ClapTrap user2("user2");
-	user1.attack("ayumi");
-	user1.takeDamage(5);
-	user2.takeDamage(5);
-	user2.attack("Piet");
-	user2.beRepaired(3);
-	user1.beRepaired(1);
+	//Scav Trap nomore HP test;
+	ScavTrap user2("user2");
+	user2.beRepaired(2);
+	user2.takeDamage(102);
+	user2.beRepaired(2);
+	user2.guardGate();
 }
