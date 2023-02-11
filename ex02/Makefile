@@ -3,7 +3,7 @@ NAME	= Aaaaand...
 SRCS	= main.cpp \
 		  ClapTrap.cpp \
 		  FragTrap.cpp \
-		  ScavTrap.cpp
+		  ScavTrap.cpp \
 
 OBJS		= $(SRCS:%.cpp=%.o)
 

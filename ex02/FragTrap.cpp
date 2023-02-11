@@ -14,7 +14,7 @@ FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy)
 
 FragTrap::FragTrap(std::string Name) : ClapTrap(Name)
 {
-	std::cout << "ScavTra " << Name << " created " << std::endl;
+	std::cout << "FragTrap " << Name << " created " << std::endl;
 	this->_HP = 100;
 	this->_Energy = 100;
 	this->_Attack_damage = 30;
@@ -40,8 +40,12 @@ void FragTrap::highFivesGuys(void)
 
 void FragTrap::attack(const std::string& target)
 {
-	if (this->_HP <= 0 && this->_Energy <= 0)
-		return ;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
 	else
 	{
 		std::cout << "FragTrap " << _name << " attacks " << target << " causing " << _Attack_damage << " points of damage! " << std::endl;
@@ -51,14 +55,27 @@ void FragTrap::attack(const std::string& target)
 
 void FragTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "FragTrap " << _name << " took " << amount << " damage " << std::endl;
-	this->_HP = this->_HP - amount;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
+	else
+	{
+		std::cout << "FragTrap " << _name << " took " << amount << " damage " << std::endl;
+		this->_HP = this->_HP - amount;
+	}
 }
 
 void FragTrap::beRepaired(unsigned int amount)
 {
-	if (this->_HP <= 0 && this->_Energy <= 0)
-		return ;
+	if (this->_HP <= 0)
+	{
+		std::cout << "No more HP" << std::endl;
+	}
+	else if (this->_Energy <= 0)
+		std::cout << "No more Energy" << std::endl;
 	else
 	{
 		this->_Energy--;
